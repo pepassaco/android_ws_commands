@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <!-- Background -->
+  <circle cx="54" cy="54" r="50" fill="#000000"/>
+  
+  <!-- Connection lines -->
+  <path d="M30 54 Q54 30 78 54" stroke="white" stroke-width="6" fill="none"/>
+  <path d="M30 54 Q54 78 78 54" stroke="white" stroke-width="6" fill="none"/>
+  
+  <!-- Command buttons -->
+  <rect x="28" y="44" width="12" height="20" rx="2" fill="white"/>
+  <rect x="48" y="44" width="12" height="20" rx="2" fill="white"/>
+  <rect x="68" y="44" width="12" height="20" rx="2" fill="white"/>
+</svg>

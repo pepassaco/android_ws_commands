@@ -9,7 +9,11 @@ import okhttp3.*
 import java.util.concurrent.TimeUnit
 import android.view.View
 import android.graphics.Color
-import androidx.core.view.isVisible
+import android.content.Context
+import android.content.Intent
+
+import android.app.Activity
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : ComponentActivity() {
     private lateinit var webSocket: WebSocket
@@ -17,6 +21,17 @@ class MainActivity : ComponentActivity() {
     private lateinit var responseText: TextInputEditText
     private var isConnected = false
     private var pingJob: java.util.Timer? = null
+    private val settingsLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // Settings were saved, reconnect
+            stopPing()
+            webSocket.cancel()
+            setupWebSocket()
+            appendToResponse("Reconnecting with new settings...")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +43,10 @@ class MainActivity : ComponentActivity() {
         setupWebSocket()
         setupButtons()
         setupReconnectButton()
+
+        findViewById<MaterialButton>(R.id.settingsButton).setOnClickListener {
+            settingsLauncher.launch(Intent(this, SettingsActivity::class.java))
+        }
     }
 
     private fun setupReconnectButton() {
@@ -65,7 +84,7 @@ class MainActivity : ComponentActivity() {
             .build()
 
         val request = Request.Builder()
-            .url("ws://10.0.2.2:8080")
+            .url(getWebSocketUrl())
             .build()
 
         webSocket = client.newWebSocket(request, object : WebSocketListener() {
@@ -148,6 +167,13 @@ class MainActivity : ComponentActivity() {
             .joinToString("\n")
         responseText.setText(newText)
         responseText.setSelection(newText.length)
+    }
+
+    private fun getWebSocketUrl(): String {
+        val prefs = getSharedPreferences("WebSocketSettings", Context.MODE_PRIVATE)
+        val host = prefs.getString("host", "10.0.2.2") ?: "10.0.2.2"
+        val port = prefs.getString("port", "8080") ?: "8080"
+        return "ws://$host:$port"
     }
 
     override fun onDestroy() {
