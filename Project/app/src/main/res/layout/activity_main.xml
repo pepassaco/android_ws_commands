@@ -53,85 +53,85 @@
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 1"
-            android:textSize="18sp"
-            android:backgroundTint="#90EE90"
             android:layout_margin="4dp"
+            android:backgroundTint="#90EE90"
+            android:text="GOL LOCAL"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/button3"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/button2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button3"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 2"
-            android:textSize="18sp"
-            android:backgroundTint="#FFB6B6"
             android:layout_margin="4dp"
+            android:backgroundTint="#FFB6B6"
+            android:text="GOL VISITANTE"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/button4"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toRightOf="@id/button1"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button4"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 3"
-            android:textSize="18sp"
-            android:backgroundTint="#90EE90"
             android:layout_margin="4dp"
+            android:backgroundTint="#90EE90"
+            android:text="VENTA 1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/button5"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/button4"
-            app:layout_constraintTop_toBottomOf="@id/button1"
-            app:layout_constraintBottom_toTopOf="@id/button5"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toBottomOf="@id/button1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button4"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 4"
-            android:textSize="18sp"
-            android:backgroundTint="#FFB6B6"
             android:layout_margin="4dp"
+            android:backgroundTint="#FFB6B6"
+            android:text="VENTA 2"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/button6"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toRightOf="@id/button3"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button2"
-            app:layout_constraintBottom_toTopOf="@id/button6"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toBottomOf="@id/button2" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button5"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 5"
-            android:textSize="18sp"
-            android:backgroundTint="#90EE90"
             android:layout_margin="4dp"
+            android:backgroundTint="#90EE90"
+            android:text="EXTRA 1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/button6"
-            app:layout_constraintTop_toBottomOf="@id/button3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toBottomOf="@id/button3" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button6"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Command 6"
-            android:textSize="18sp"
-            android:backgroundTint="#FFB6B6"
             android:layout_margin="4dp"
+            android:backgroundTint="#FFB6B6"
+            android:text="EXTRA 2"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toRightOf="@id/button5"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintTop_toBottomOf="@id/button4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

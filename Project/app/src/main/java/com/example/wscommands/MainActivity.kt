@@ -130,7 +130,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setupButtons() {
-        val commands = listOf("cmd1", "cmd2", "cmd3", "cmd4", "cmd5", "cmd6")
+        val commands = listOf("local_gol", "visitante_gol", "venta_1", "venta_2", "extra_1", "extra_2")
 
         for (i in 1..6) {
             findViewById<MaterialButton>(
