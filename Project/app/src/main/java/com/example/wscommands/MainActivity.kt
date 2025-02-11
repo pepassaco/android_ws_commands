@@ -68,7 +68,7 @@ class MainActivity : ComponentActivity() {
                         Log.d("WebSocket", "Ping sent")
                     }
                 }
-            }, 0, 10000) // 10 seconds interval
+            }, 0, 30000) // 10 seconds interval
         }
     }
 
