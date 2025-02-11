@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -10,9 +11,11 @@
         android:id="@+id/statusIndicator"
         android:layout_width="16dp"
         android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/status_indicator"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Response Text Box -->
     <com.google.android.material.textfield.TextInputLayout
@@ -47,14 +50,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toBottomOf="@id/responseContainer"
-        app:layout_constraintBottom_toTopOf="@id/bottomButtonRow">
+        app:layout_constraintBottom_toTopOf="@id/sellButton">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="4dp"
-            android:backgroundTint="#90EE90"
+            android:backgroundTint="#2EE02E"
             android:text="GOL LOCAL"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/button3"
@@ -68,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="4dp"
-            android:backgroundTint="#FFB6B6"
+            android:backgroundTint="#E73434"
             android:text="GOL VISITANTE"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/button4"
@@ -83,7 +86,7 @@
             android:layout_height="0dp"
             android:layout_margin="4dp"
             android:backgroundTint="#90EE90"
-            android:text="VENTA 1"
+            android:text="VENDER LOCAL"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/button5"
             app:layout_constraintHorizontal_weight="1"
@@ -97,7 +100,7 @@
             android:layout_height="0dp"
             android:layout_margin="4dp"
             android:backgroundTint="#FFB6B6"
-            android:text="VENTA 2"
+            android:text="VENDER VISITANTE"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/button6"
             app:layout_constraintHorizontal_weight="1"
@@ -111,7 +114,7 @@
             android:layout_height="0dp"
             android:layout_margin="4dp"
             android:backgroundTint="#90EE90"
-            android:text="EXTRA 1"
+            android:text="CANCELAR LOCAL"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_weight="1"
@@ -125,7 +128,7 @@
             android:layout_height="0dp"
             android:layout_margin="4dp"
             android:backgroundTint="#FFB6B6"
-            android:text="EXTRA 2"
+            android:text="CANCELAR VISITANTE"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_weight="1"
@@ -134,6 +137,17 @@
             app:layout_constraintTop_toBottomOf="@id/button4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sellButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#FFA500"
+        android:text=" CANCELAR TODO"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/bottomButtonRow"
+        tools:layout_editor_absoluteX="16dp" />
 
     <!-- Bottom Button Row -->
     <LinearLayout

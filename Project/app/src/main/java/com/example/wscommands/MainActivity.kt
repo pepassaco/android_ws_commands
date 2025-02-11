@@ -130,8 +130,9 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setupButtons() {
-        val commands = listOf("local_gol", "visitante_gol", "venta_1", "venta_2", "extra_1", "extra_2")
+        val commands = listOf("home_goal", "away_goal", "home_sell", "away_sell", "home_cancel", "away_cancel")
 
+        // Setup the six command buttons
         for (i in 1..6) {
             findViewById<MaterialButton>(
                 resources.getIdentifier("button$i", "id", packageName)
@@ -154,6 +155,28 @@ class MainActivity : ComponentActivity() {
                 } else {
                     appendToResponse("Failed to send: $command")
                 }
+            }
+        }
+
+        // Setup the sell button
+        findViewById<MaterialButton>(R.id.sellButton).setOnClickListener { button ->
+            if (!isConnected) {
+                appendToResponse("Not connected to server!")
+                return@setOnClickListener
+            }
+
+            val command = "cancel_all"
+            Log.d("WebSocket", "Sending command: $command")
+            val sent = webSocket.send(command)
+
+            if (sent) {
+                appendToResponse("Sent: $command")
+                button.isEnabled = false // Temporarily disable button
+                button.postDelayed({
+                    button.isEnabled = true
+                }, 100) // Re-enable after 100ms
+            } else {
+                appendToResponse("Failed to send: $command")
             }
         }
     }
